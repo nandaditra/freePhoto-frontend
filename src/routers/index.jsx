@@ -12,8 +12,8 @@ function Routers() {
             <Routes>
                  <Route path="/" element={<Main />} />
                  <Route path="/p/notfound" element={<NotFound />} />
-                 <Route path="/p/signup" element={<Signin />} />
-                 <Route path="/p/login" element={<Login />} />
+                 <Route path="/signin" element={<Signin />} />
+                 <Route path="/login" element={<Login />} />
                  <Route path="/p/overviewphoto" element={<OverviewPhoto/>}/>
                  <Route path="/p/resultsearch" element={<ResultSearch />}/>
             </Routes>
