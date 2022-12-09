@@ -1,7 +1,13 @@
 import Footer from "../../components/Footer"
 import Header from "../../components/Header"
+import data from "../../api"
+import { useState } from "react"
 
 function Main() {
+    const [ photos, setPhotos ] = useState([])
+
+    console.log(data)
+  
     return (
         <>
             <Header />
