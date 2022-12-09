@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios";
 
-const DataApi = () => {
+export const DataApi = () => {
      const [ data, setData ] = useState([])
      const clientID = "skvb09VUPNn_nYPUySKqfvnYAS7HWR2W_RgDYxBeIZA"
      
@@ -20,5 +20,3 @@ const DataApi = () => {
 
      return data
 }
-
-export default DataApi;

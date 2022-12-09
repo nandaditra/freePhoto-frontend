@@ -1,7 +1,5 @@
-import DataApi from"./api.js"
+import {DataApi} from"./api.js"
 
-const data = () => {
+export const api = () => {
     return DataApi
 }
-
-export default data;

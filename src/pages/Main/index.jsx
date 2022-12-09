@@ -1,13 +1,27 @@
 import Footer from "../../components/Footer"
 import Header from "../../components/Header"
-import data from "../../api"
-import { useState } from "react"
+import axios from "axios"
+import { useEffect, useState } from "react"
 
 function Main() {
-    const [ photos, setPhotos ] = useState([])
+    const [ data, setData ] = useState([])
+    const clientID = "skvb09VUPNn_nYPUySKqfvnYAS7HWR2W_RgDYxBeIZA"
+    
+    const fetchData = async() => {
+         try {
+           const response = await axios.get('https://api.unsplash.com/photos/?client_id='+clientID)
+           setData(response.data)  
+         } catch (error) {
+           console.log(error)
+         }
+    }
+
+    useEffect(()=> {
+       fetchData();
+    }, [])
 
     console.log(data)
-  
+    
     return (
         <>
             <Header />
@@ -30,6 +44,20 @@ function Main() {
                            Search
                         </button>
                     </form>
+                </div>
+
+                <div className="m-10 grid grid-cols-4 gap-4">
+                    {data.map((photo, index) => 
+                        <div 
+                           className="cols-span-1"
+                           key={index}>
+                            <img 
+                              src={photo.urls.raw} 
+                              alt={photo.alt_description}
+                              width={photo.width}
+                              height={photo.height}/>
+                        </div>   
+                     )}
                 </div>
             </main>
 
