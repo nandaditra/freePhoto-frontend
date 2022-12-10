@@ -1,6 +1,7 @@
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import signup from "../../assets/img/bg-signup.jpg"
+import { Link } from "react-router-dom"
 
 function Signin() {
     return (
@@ -41,7 +42,7 @@ function Signin() {
 
                           <div className="grid grid-cols-2 gap-4">
                               <div className="m-auto ml-6">
-                                   Have account? <b className="text-black">Login</b>
+                                   Have account? <b className="text-black"><Link to="/login">Login</Link></b>
                               </div>
                               <div className="text-right">
                                   <button 

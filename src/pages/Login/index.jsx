@@ -1,6 +1,7 @@
 import Header from "../../components/Header"
 import Footer from "../../components/Footer"
 import login from "../../assets/img/bg-login.jpg"
+import { Link } from "react-router-dom"
 
 function Login() {
     return (
@@ -31,7 +32,7 @@ function Login() {
 
                           <div className="grid grid-cols-2 gap-4">
                               <div className="m-auto ml-6">
-                                   Don't have account? <b className="text-black">Sign In</b>
+                                   Don't have account? <b className="text-black"><Link to="/signin">Sign In</Link></b>
                               </div>
                               <div className="text-right">
                                   <button type="submit" className="m-6 px-5 py-2.5 ml-2 text-sm font-medium text-white bg-blue-700 rounded-lg border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-black dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login</button>
