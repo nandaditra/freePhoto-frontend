@@ -1,5 +1,3 @@
-import {DataApi} from"./api.js"
+import api from"./api.js"
 
-export const api = () => {
-    return DataApi
-}
+export default api
