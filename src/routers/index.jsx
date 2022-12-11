@@ -11,11 +11,11 @@ function Routers() {
         <BrowserRouter>
             <Routes>
                  <Route path="/" element={<Main />} />
-                 <Route path="/p/notfound" element={<NotFound />} />
                  <Route path="/signin" element={<Signin />} />
                  <Route path="/login" element={<Login />} />
-                 <Route path="/p/overviewphoto" element={<OverviewPhoto/>}/>
-                 <Route path="/p/resultsearch" element={<ResultSearch />}/>
+                 <Route path="/photos/:photoId" element={<OverviewPhoto/>}/>
+                 <Route path="/photos/searchphoto/:queryId" element={<ResultSearch />}/>
+                 <Route path="/notfound" element={<NotFound />} />
             </Routes>
         </BrowserRouter>
     )
