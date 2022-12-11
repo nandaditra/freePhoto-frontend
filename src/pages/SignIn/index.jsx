@@ -1,7 +1,7 @@
 import Header from "../../components/Header"
-import Footer from "../../components/Footer"
 import signup from "../../assets/img/bg-signup.jpg"
 import { Link } from "react-router-dom"
+import FooterPage from "../../components/FooterPage"
 
 function Signin() {
     return (
@@ -14,7 +14,7 @@ function Signin() {
                       <form className="">
                           <div className="mt-6 mx-6 pt-6">
                              <label 
-                                forName="username" 
+                                htmlFor="username" 
                                 className="">
                                     Username
                              </label><br/>
@@ -23,7 +23,7 @@ function Signin() {
 
                           <div className="mt-6 mx-6">
                              <label 
-                                forName="username" 
+                                htmlFor="username" 
                                 className="">
                                     Email
                              </label><br/>
@@ -31,12 +31,12 @@ function Signin() {
                           </div>
 
                           <div className="mt-6 mx-6">
-                             <label forName="pw-signin" className="">Password</label><br/>
+                             <label htmlFor="pw-signin" className="">Password</label><br/>
                              <input type="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
                           </div>
 
                           <div className="mt-6 mx-6">
-                             <label forName="pw-confirm-signin" className="">Confirm Password</label><br/>
+                             <label htmlFor="pw-confirm-signin" className="">Confirm Password</label><br/>
                              <input type="password" className="bg-gray-50 border border-gray-300 text-gray-900 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
                           </div>
 
@@ -62,7 +62,7 @@ function Signin() {
                    alt="bg-signup.png"/>
               </div>
            </div>
-        <Footer />
+        <FooterPage />
         </>
     )
 }
