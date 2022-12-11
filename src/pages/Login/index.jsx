@@ -1,5 +1,5 @@
 import Header from "../../components/Header"
-import Footer from "../../components/Footer"
+import FooterPage from "../../components/Footer"
 import login from "../../assets/img/bg-login.jpg"
 import { Link } from "react-router-dom"
 
@@ -14,7 +14,7 @@ function Login() {
                       <form className="">
                           <div className="mt-6 mx-6 pt-6">
                              <label 
-                                forName="username" 
+                                htmlFor="username" 
                                 className="">
                                     Username
                              </label><br/>
@@ -22,7 +22,7 @@ function Login() {
                           </div>
 
                           <div className="mt-6 mx-6">
-                             <label forName="pw-login" className="">Password</label><br/>
+                             <label htmlFor="pw-login" className="">Password</label><br/>
                              <input type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-black text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-white dark:border-gray-600 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500"/>
                           </div>
 
@@ -48,7 +48,7 @@ function Login() {
                    alt="bg-login.png"/>
               </div>
            </div>
-        <Footer />
+        <FooterPage />
        </>
     )
 }
