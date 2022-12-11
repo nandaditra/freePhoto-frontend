@@ -9,6 +9,7 @@ import Loading from "../Loading"
 function OverviewPhoto() {
     const [ data, setData ] = useState([])
     const [ isLoading, setLoading] = useState(false)
+    const [ link, setLink] = useState("")
     const { photoId } = useParams() 
     const navigate = useNavigate()
     const photos = data.find((photo)=> photo.id === photoId) 
@@ -33,6 +34,13 @@ function OverviewPhoto() {
          }, [2000])
     }, [isLoading])
 
+    useEffect(() => {        
+         const fetchLink = () => {
+              setLink(`photos/${photos?.id}`)
+         }
+         fetchLink()
+    }, [photos?.id])
+
     console.log(photos) 
 
     if(photos === false) {
@@ -52,7 +60,7 @@ function OverviewPhoto() {
        {
         return (
             <>
-              <HeaderPage/>
+              <HeaderPage link ={link}/>
 
               <main className="">
                   <div className="m-6 grid grid-cols-10 gap-4">
