@@ -1,6 +1,6 @@
 import Footer from "../../components/Footer"
 import Header from "../../components/Header"
-import api from "../../api"
+import api from "../../api/api.js"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import Loading from "../Loading"
@@ -15,7 +15,7 @@ function Main() {
     const fetchData = async() => {
          try {
            setLoading(true)
-           const response = await api.get()
+           const response = await api.get('/photos')
            setData(response.data)  
          } catch (error) {
            console.log(error)
@@ -25,7 +25,6 @@ function Main() {
 
     const handleSearch = (e) => {
           e.preventDefault();
-          alert(`The keyword you search is ${query}`)
           if(query === "") {
             console.log("query still empty")
             navigate(`/`)

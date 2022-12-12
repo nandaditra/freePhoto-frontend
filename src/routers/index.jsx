@@ -5,6 +5,7 @@ import Signin from "../pages/SignIn"
 import Login from "../pages/Login"
 import OverviewPhoto from "../pages/OverviewPhoto"
 import ResultSearch from "../pages/ResultSearch"
+import OverviewPhotoSearch from "../pages/OverviewPhotoSearch"
 
 function Routers() {
     return (
@@ -14,6 +15,7 @@ function Routers() {
                  <Route path="/signin" element={<Signin />} />
                  <Route path="/login" element={<Login />} />
                  <Route path="/photos/:photoId" element={<OverviewPhoto/>}/>
+                 <Route path="/photos/search/:photoId" element={<OverviewPhotoSearch/>} />
                  <Route path="/photos/searchphoto/:queryId" element={<ResultSearch />}/>
                  <Route path="/notfound" element={<NotFound />} />
             </Routes>

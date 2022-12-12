@@ -2,11 +2,12 @@ import { useEffect, useState } from "react"
 import { useNavigate, useParams } from "react-router-dom"
 import api from "../../api/api"
 import Footer from "../../components/Footer"
+import storelink from "../../redux/storelink"
 import FooterPage from "../../components/FooterPage"
 import HeaderPage from "../../components/HeaderPage"
 import Loading from "../Loading"
 
-function OverviewPhoto() {
+function OverviewPhotoSearch() {
     const [ data, setData ] = useState([])
     const [ isLoading, setLoading] = useState(false)
     const [ link, setLink] = useState("")
@@ -14,11 +15,11 @@ function OverviewPhoto() {
     const navigate = useNavigate()
     const photos = data.find((photo)=> photo.id === photoId)
 
-    const fetchDataFromMain = async() => {
+    const fetchDataFromSearch = async() => {
         try {
           setLoading(true)
-          const response = await api.get('/photos')
-          setData(response.data)
+          const response = await api.get(storelink.link)
+          setData(response.data.results)
           
         } catch (error) {
           console.log(error)
@@ -31,7 +32,7 @@ function OverviewPhoto() {
             if(isLoading === false) {
                console.log("Loading ...")
             }
-            fetchDataFromMain()
+            fetchDataFromSearch()
          }, [2000])
     }, [isLoading])
 
@@ -42,8 +43,8 @@ function OverviewPhoto() {
          fetchLink()
     }, [photos?.id])
 
-    console.log(photos) 
-
+    console.log(storelink.link) 
+    console.log(data)
     if(photos === false) {
        navigate('/notfound')
        console.log("Data is Not Found")
@@ -154,4 +155,4 @@ function OverviewPhoto() {
     }
 }
 
-export default OverviewPhoto
+export default OverviewPhotoSearch;
