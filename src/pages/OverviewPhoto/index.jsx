@@ -9,29 +9,29 @@ import Loading from "../Loading"
 function OverviewPhoto() {
     const [ data, setData ] = useState([])
     const [ isLoading, setLoading] = useState(false)
+    const [error, setError ] = useState(null)
     const [ link, setLink] = useState("")
     const { photoId } = useParams() 
     const navigate = useNavigate()
     const photos = data.find((photo)=> photo.id === photoId)
 
-    const fetchDataFromMain = async() => {
-        try {
+    const fetchData = () => {
+      api.get('/photos').then((response) =>{
           setLoading(true)
-          const response = await api.get('/photos')
           setData(response.data)
-          
-        } catch (error) {
-          console.log(error)
+      }).catch(error => {
           setLoading(false)
-        }
+          setError(error)
+      })
     }
+
 
     useEffect(() => {
         setTimeout(()=>{
             if(isLoading === false) {
                console.log("Loading ...")
             }
-            fetchDataFromMain()
+            fetchData()
          }, [2000])
     }, [isLoading])
 
@@ -49,7 +49,7 @@ function OverviewPhoto() {
        console.log("Data is Not Found")
     } 
     
-    if(isLoading === false) {
+    if(isLoading === false && error === null) {
       return (
          <>
            <HeaderPage />

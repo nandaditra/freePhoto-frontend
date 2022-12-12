@@ -10,21 +10,20 @@ import Loading from "../Loading"
 function OverviewPhotoSearch() {
     const [ data, setData ] = useState([])
     const [ isLoading, setLoading] = useState(false)
+    const [error, setError] = useState(null)
     const [ link, setLink] = useState("")
     const { photoId } = useParams() 
     const navigate = useNavigate()
     const photos = data.find((photo)=> photo.id === photoId)
 
-    const fetchDataFromSearch = async() => {
-        try {
-          setLoading(true)
-          const response = await api.get(storelink.link)
-          setData(response.data.results)
-          
-        } catch (error) {
-          console.log(error)
-          setLoading(false)
-        }
+    const fetchDataFromSearch = () => {
+      api.get(storelink.link).then((response) =>{
+         setLoading(true)
+         setData(response.data)
+     }).catch(error => {
+         setLoading(false)
+         setError(error)
+     })
     }
 
     useEffect(() => {
@@ -50,7 +49,7 @@ function OverviewPhotoSearch() {
        console.log("Data is Not Found")
     } 
     
-    if(isLoading === false) {
+    if(isLoading === false && error === null) {
       return (
          <>
            <HeaderPage />

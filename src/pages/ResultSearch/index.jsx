@@ -10,19 +10,18 @@ import Loading from "../Loading"
 function ResultSearch() {
     const [data, setData] = useState([])
     const [isLoading, setLoading ] = useState(false)
+    const [error, setError] = useState(null)
     const { queryId } = useParams()
     console.log(queryId)
 
-    const fetchData = async() => {
-        try {
+    const fetchData = () => {
+        api.get('search/photos?query='+queryId).then((response) =>{
             setLoading(true)
-            const response = await api.get('search/photos?query='+queryId)
-            setData(response.data)  
-          } catch (error) {
-            console.log(error)
-            console.error()
+            setData(response.data)
+        }).catch(error => {
             setLoading(false)
-          }
+            setError(error)
+        })
     } 
 
     useEffect(()=> {
@@ -37,7 +36,7 @@ function ResultSearch() {
         }, [1500])       
     })
 
-    if(isLoading === false) {
+    if(isLoading === false && error === null) {
         return (
             <>
                <HeaderPage />

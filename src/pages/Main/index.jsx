@@ -8,19 +8,19 @@ import FooterPage from "../../components/FooterPage"
 
 function Main() {
     const [ data, setData ] = useState([])
+    const [ error, setError ] = useState(null)
     const [ isLoading, setLoading ] = useState(false)
     const [ query, setQuery ] = useState("")
     const navigate = useNavigate()
 
-    const fetchData = async() => {
-         try {
-           setLoading(true)
-           const response = await api.get('/photos')
-           setData(response.data)  
-         } catch (error) {
-           console.log(error)
-           setLoading(false)
-         }
+    const fetchData = () => {
+        api.get('/photos').then((response) =>{
+            setLoading(true)
+            setData(response.data)
+        }).catch(error => {
+            setLoading(false)
+            setError(error)
+        })
     }
 
     const handleSearch = (e) => {
@@ -45,7 +45,7 @@ function Main() {
     console.log(query)
     console.log(data)
     
-    if(isLoading === false) {
+    if(isLoading === false && error === null) {
         return (
             <>
                <Header/>
