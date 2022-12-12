@@ -19,7 +19,7 @@ function OverviewPhotoSearch() {
     const fetchDataFromSearch = () => {
       api.get(storelink.link).then((response) =>{
          setLoading(true)
-         setData(response.data)
+         setData(response.data.results)
      }).catch(error => {
          setLoading(false)
          setError(error)
