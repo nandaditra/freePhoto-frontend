@@ -63,9 +63,6 @@ function Main() {
             }
         })
     }, [])
-
-    console.log(query)
-    console.log(data)
     
     if(isLoading === false && error === null) {
         return (

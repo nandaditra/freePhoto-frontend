@@ -5,6 +5,7 @@ import api from "../../api/api.js"
 import Footer from "../../components/Footer"
 import FooterPage from "../../components/FooterPage"
 import HeaderPage from "../../components/HeaderPage"
+import NotFound from "../NotFound"
 import Loading from "../Loading"
 
 function ResultSearch() {
@@ -44,7 +45,14 @@ function ResultSearch() {
                <Footer />
             </>
         )
-    } else {
+    } else if(error) {
+        return (
+            <>
+              <NotFound />
+            </>
+        )
+    } 
+    else {
         return (
         <>
          <HeaderPage />
