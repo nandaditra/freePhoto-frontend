@@ -1,0 +1,38 @@
+@media screen and (max-width:1050px) {
+  .text-8xl {
+    font-size: 80px;
+    margin: 1.5rem;
+  } 
+  .text-3xl{
+    font-size:30px;
+    margin: 1rem;
+  }
+    
+}
+
+@media screen and (max-width:700px) {
+    .text-8xl {
+        font-size: 60px;
+        margin: 1rem;
+
+    }
+
+    .text-3xl {
+        font-size:20px;
+        margin: 0.5rem;
+    }
+}
+    
+@media screen and (max-width:350px) {
+    .text-8xl {
+        font-size: 40px;
+        margin: 0.5rem;
+    }
+    
+
+    .text-3xl {
+        font-size:8px;
+        margin: 0.2rem;
+    }
+}
+    
