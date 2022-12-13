@@ -3,6 +3,8 @@ import Header from "../../components/Header"
 import api from "../../api/api.js"
 import { useEffect, useState } from "react"
 import { Link, useNavigate } from "react-router-dom"
+import { onAuthStateChanged } from "firebase/auth"
+import { auth } from "../../authentication/firebase"
 import Loading from "../Loading"
 import FooterPage from "../../components/FooterPage"
 
@@ -33,6 +35,15 @@ function Main() {
           }
     }
 
+    // const handleLogout = () => {
+    //     signOut(auth).then(()=> {
+    //         navigate("/")
+    //         console.log("Signed out successfully")
+    //     }).catch((error)=> {
+    //         console.log(error)
+    //     })
+    // }
+
     useEffect(()=> {
        setTimeout(() =>{
             if (isLoading === false) {
@@ -41,6 +52,17 @@ function Main() {
             fetchData();
        }, [2000])
     }, [isLoading])
+
+    useEffect(()=> {
+        onAuthStateChanged(auth, (user)=> {
+            if(user) {
+                const uid = user.uid;
+                console.log("uid", uid)
+            } else {
+                console.log("user is logged out")
+            }
+        })
+    }, [])
 
     console.log(query)
     console.log(data)
