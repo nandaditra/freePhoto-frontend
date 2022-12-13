@@ -31,9 +31,13 @@ function OverviewPhotoSearch() {
             if(isLoading === false) {
                console.log("Loading ...")
             }
+
+            if(error) {
+               navigate('/notfound')
+            }
             fetchDataFromSearch()
          }, [2000])
-    }, [isLoading])
+    }, [isLoading, error, navigate])
 
     useEffect(() => {        
          const fetchLink = () => {
