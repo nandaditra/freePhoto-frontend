@@ -9,7 +9,7 @@ import Loading from "../Loading"
 function OverviewPhoto() {
     const [ data, setData ] = useState([])
     const [ isLoading, setLoading] = useState(false)
-    const [error, setError ] = useState(null)
+    const [ error, setError ] = useState(null)
     const [ link, setLink] = useState("")
     const { photoId } = useParams() 
     const navigate = useNavigate()
@@ -55,28 +55,29 @@ function OverviewPhoto() {
     
     if(isLoading === false && error === null) {
       return (
-         <>
+         <div className="bg-white">
            <HeaderPage />
            <Loading />
            <Footer/>
-         </>
+         </div>
       )
     } else
        {
         return (
-            <>
+            <div className="bg-white">
               <HeaderPage link ={link}/>
 
-              <main className="">
-                  <div className="m-6 grid grid-cols-10 gap-4">
+              <main className="bg-white">
+                  <div className="m-6 grid grif-cols-1 sm:grid-cols-3 md:grid-cols-10  grid-cols-gap-4">
                      <div className="col-span-7">
                         <img
-                          className="w-full rounded-md" 
+                          className="m-auto rounded-md" 
                           src={photos?.urls.raw} 
                           alt={photos?.alt_description}
+                          width={photos?.width < photos?.height ?  "50%": "100%"}
                           />
                      </div>
-                     <div className=" m-2 col-span-3">
+                     <div className="md:m-2 m-auto col-span-7 sm:col-span-6 md:col-span-3">
                           <div className="m-auto p-2">
                               <img
                                   className="w-12 rounded-full float-left mr-3" 
@@ -153,7 +154,7 @@ function OverviewPhoto() {
                   </div>     
               </main>
               <FooterPage/>
-            </>
+            </div>
         )
     }
 }

@@ -39,13 +39,13 @@ function ResultSearch() {
 
     if(isLoading === false && error === null) {
         return (
-            <>
+            <div className="bg-white">
                <HeaderPage />
                <Loading/>
                <Footer />
-            </>
+            </div>
         )
-    } else if(error) {
+    } else if(error || data.total === 0) {
         return (
             <>
               <NotFound />
@@ -54,7 +54,7 @@ function ResultSearch() {
     } 
     else {
         return (
-        <>
+        <div className="bg-white">
          <HeaderPage />
 
          <div className="m-8">
@@ -74,7 +74,7 @@ function ResultSearch() {
          </div>
 
          <FooterPage />
-        </>
+        </div>
     )
     }
 }

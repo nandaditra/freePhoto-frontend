@@ -13,13 +13,13 @@ function Header() {
 
                 <div className="hidden w-full md:block md:w-auto" id="navbar-default">
                     <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
-                       <li className="block text-lg  py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-black-700 md:p-0 dark:text-black" aria-current="page">
+                       <li className="block text-lg  py-2 pl-3 pr-4  rounded md:bg-transparent md:text-black-700 md:p-0 dark:text-black" aria-current="page">
                           <Link to="/">explore</Link>
                       </li>
-                       <li className="block text-lg  py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-black-700 md:p-0 dark:text-black" aria-current="page">
+                       <li className="block text-lg  py-2 pl-3 pr-4  rounded md:bg-transparent md:text-black-700 md:p-0 dark:text-black" aria-current="page">
                           <Link to="/signin">sign in</Link>
                        </li>
-                       <li className="block text-lg  py-2 pl-3 pr-4 text-white  rounded md:bg-transparent md:text-black-700 md:p-0 dark:text-black" aria-current="page">
+                       <li className="block text-lg  py-2 pl-3 pr-4  rounded md:bg-transparent md:text-black-700 md:p-0 dark:text-black" aria-current="page">
                           <Link to="/login">log in</Link>
                        </li>
                     </ul>

@@ -1,0 +1,33 @@
+$font-size-high : 18px;
+$font-size-medium : 15px;
+$font-size-low : 15px;
+
+@media screen and (max-width:1050px) {
+    .text-2xl {
+      font-size: $font-size-high;
+    } 
+    .text-lg{
+      font-size: $font-size-high;
+    }
+      
+  }
+  
+@media screen and (max-width:700px) {
+      .text-2xl {
+        font-size: $font-size-medium;
+      } 
+      .text-lg{
+        font-size: $font-size-medium;
+      }
+        
+  }
+      
+@media screen and (max-width:350px) {
+    .text-2xl {
+        font-size: $font-size-low;
+     } 
+    .text-lg{
+        font-size: $font-size-low;
+     }
+}
+      
