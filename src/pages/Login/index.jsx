@@ -1,5 +1,5 @@
 import Header from "../../components/Header"
-import FooterPage from "../../components/Footer"
+import Footer from "../../components/Footer"
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../authentication/firebase"
 import { Link, useNavigate } from "react-router-dom"
@@ -78,7 +78,7 @@ function Login() {
          
               </div>
            </div>
-        <FooterPage />
+        <Footer />
        </>
     )
 }

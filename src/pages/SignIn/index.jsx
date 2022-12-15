@@ -2,7 +2,7 @@ import Header from "../../components/Header"
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../authentication/firebase"
 import { Link, useNavigate } from "react-router-dom"
-import FooterPage from "../../components/FooterPage"
+import Footer from "../../components/FooterPage"
 import { useState } from "react";
 import "./signin.scss"
 
@@ -111,7 +111,7 @@ function Signin() {
             
               </div>
            </div>
-        <FooterPage />
+        <Footer />
         </>
     )
 }
